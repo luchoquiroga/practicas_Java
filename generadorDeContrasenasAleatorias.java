@@ -13,7 +13,6 @@ public class generadorDeContrasenasAleatorias {
         Scanner sc = new Scanner(System.in);
         Random ram = new Random();
         StringBuilder contrasena = new StringBuilder();
-        int posicion, array ;
         char caracter;
         boolean tieneLetra = false, tieneNumero = false, tieneSimbolo = false;
 
@@ -30,20 +29,12 @@ public class generadorDeContrasenasAleatorias {
         System.out.println("la contraseña sera de una longitud de: " + rango);
         while (!validacion){
             for (int i = 0; i < rango; i++) {
-                array = ram.nextInt(0, 3);
-                if (array == 0){
-                    posicion = ram.nextInt(0, letras.length );
-                    caracter = letras[posicion];
-                    contrasena.append(caracter);
-                } else if (array == 1){
-                    posicion = ram.nextInt(0, numeros.length );
-                    caracter = numeros[posicion];
-                    contrasena.append(caracter);
-                } else {
-                    posicion = ram.nextInt(0, simbolos.length );
-                    caracter = simbolos[posicion];
-                    contrasena.append(caracter);
-                }
+
+
+                char[][] opciones = {letras, numeros, simbolos};
+                char[] seleccion = opciones[ram.nextInt(opciones.length)];
+                caracter = seleccion[ram.nextInt(seleccion.length)];
+                contrasena.append(caracter);
             }
             for (int i = 0; i < contrasena.length(); i++) {
                 char letra = contrasena.charAt(i);
