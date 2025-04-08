@@ -7,35 +7,36 @@ public class cuentas {
 
 
     //constructor
-    public cuentas(String nom, double saldo, String contrasena){
+    public cuentas(String nom, double saldo, String contrasena) {
         this.nombre = nom;
         this.saldo = saldo;
         this.contrasena = contrasena;
     }
 
     //setters
-    public void setContrasena(String contra){
+    public void setContrasena(String contra) {
         this.contrasena = contra;
     }
 
-    public void setNombre(String nom){
+    public void setNombre(String nom) {
         this.nombre = nom;
     }
 
-    public void setSaldo(double saldo){
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     //getters
 
-    public String getContrasena(){
+    public String getContrasena() {
         return this.contrasena;
     }
-    public String getNombre(){
+
+    public String getNombre() {
         return this.nombre;
     }
 
-    public double getSaldo(){
+    public double getSaldo() {
         return this.saldo;
     }
 
@@ -46,20 +47,20 @@ public class cuentas {
     //obtiene retiro del usuario y lo resta al saldo
     //las excepciones son de si el retiro es mayor al saldo
     // y si ingresa letras en vez de numeros
-    public void retiro(double monto){
+    public void retiro(double monto) {
         this.saldo -= monto;
     }
 
-    public void deposito(double deposito){
+    public void deposito(double deposito) {
         this.saldo += deposito;
     }
 
-    public void transferencia(cuentas destino, double transferencia){
+    public void transferencia(cuentas destino, double transferencia) {
         this.saldo -= transferencia;
         destino.recibirTransferencia(transferencia);
     }
 
-    public void recibirTransferencia(double monto){
+    public void recibirTransferencia(double monto) {
         this.saldo += monto;
     }
 }
