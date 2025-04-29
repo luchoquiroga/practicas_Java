@@ -1,0 +1,77 @@
+🔹 Ejercicios basados en la teoría (con más complejidad)📍 Intermedio
+1️⃣ Conversor de Temperatura
+Pide al usuario una temperatura en Celsius.
+Convierte a Fahrenheit y Kelvin usando Math.
+Agrega validación para evitar temperaturas imposibles (ej., menos de -273.15°C).
+2️⃣ Generador de Contraseñas Aleatorias
+Usa Math.random() y StringBuilder para generar una contraseña de 10 caracteres.
+La contraseña debe contener letras, números y símbolos.
+3️⃣ Simulador de una Calculadora Mejorada
+Pide dos números y una operación (+, -, *, /, %).
+Usa switch para elegir la operación.
+Evita errores como división por cero y operaciones inválidas.
+4️⃣ Adivina el Número
+Genera un número aleatorio entre 1 y 100.
+El usuario debe adivinarlo, recibiendo pistas (“más alto” o “más bajo”).
+Agrega límite de intentos y mensaje final de victoria o derrota.
+5️⃣ Contador de Vocales y Consonantes
+Pide una frase al usuario.
+Cuenta cuántas vocales y consonantes tiene.
+Usa charAt() y toLowerCase().
+📍 Difícil
+6️⃣ Simulador de Cuentas Bancarias
+Cada usuario tiene un saldo y puede hacer depósitos/retiros.
+Usa try-catch para manejar errores como retiros mayores al saldo.
+Implementa múltiples cuentas y permite transferencias entre ellas.
+7️⃣ Verificador de Palíndromos
+Pide una palabra y verifica si se lee igual al revés.
+Usa StringBuilder.reverse().
+Ignora mayúsculas y espacios.
+8️⃣ Cifrado César
+Pide un mensaje y una clave numérica.
+Desplaza cada letra del mensaje esa cantidad en el alfabeto.
+Asegura que el cifrado sea reversible.
+9️⃣ Simulador de Tienda con Stock
+Define productos con precio y cantidad en stock.
+Permite al usuario comprar productos y descuenta del stock.
+Evita compras que excedan la cantidad disponible.
+🔟 Matriz de Identidad Automática
+Pide un tamaño n y genera una matriz identidad de n x n.
+Usa Arrays.deepToString() para mostrar la matriz.
+🔹 Ejercicios creados desde cero
+📍 Intermedio
+1️⃣ Generador de Tablas de Multiplicar
+Pide un número y genera su tabla del 1 al 10.
+Permite elegir si mostrarla en orden normal o inverso.
+2️⃣ Conversor de Tiempo
+Pide un número de segundos.
+Convierte a horas, minutos y segundos (3661 → 1h 1m 1s).
+3️⃣ Juego de Dados
+Simula tirar dos dados (1-6).
+Gana el que saque el número más alto.
+Permite jugar varias rondas.
+4️⃣ Generador de Números Primos
+Pide n y muestra los primeros n números primos.
+Usa una función para verificar si un número es primo.
+5️⃣ Calculadora de Factorial
+Pide un número n y calcula n! usando un for y un while.
+📍 Difícil
+6️⃣ Juego de Piedra, Papel o Tijera
+Permite jugar contra la computadora.
+La computadora elige aleatoriamente.
+Muestra quién gana cada ronda y el total de victorias.
+7️⃣ Conversor de Números Romanos
+Pide un número (1-3999).
+Convierte a números romanos (1987 → MCMLXXXVII).
+8️⃣ Analizador de Texto
+Pide una oración y muestra:
+Cantidad de palabras.
+Palabra más larga y más corta.
+Cantidad de letras y espacios.
+9️⃣ Simulador de Notas Escolares
+Pide 5 notas y calcula el promedio.
+Muestra si aprobó (>=7) o reprobó.
+Permite ingresar notas de varios alumnos.
+🔟 Generador de Tablero de Ajedrez
+Imprime un tablero de ajedrez en texto (8x8).
+Usa # y espacios alternados para las casillas.
