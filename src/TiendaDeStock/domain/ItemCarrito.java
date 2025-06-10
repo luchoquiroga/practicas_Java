@@ -12,6 +12,6 @@ public class ItemCarrito {
     }
 
     public String mostrarInfo(){
-        return this.producto.mostrarInfo() + cantidad;
+        return this.producto.mostrarInfo() + " cantidad: " + cantidad;
     }
 }
