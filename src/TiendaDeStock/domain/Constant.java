@@ -8,16 +8,16 @@ import java.util.Arrays;
 public class Constant {
 
     public static final ArrayList<Producto> PRODUCTOS_NEGOCIO_1 = new ArrayList<>(Arrays.asList(
-            new Producto("harina", 5000, 10),
-            new Producto("huevo", 3000, 20),
-            new Producto("leche", 500, 50),
-            new Producto("pan", 700, 12)
+            ProductoFactory.crearProducto("comida", "papas", 5000, 10, "300", "Vegetariano"),
+            ProductoFactory.crearProducto("comida", "huevo", 3000, 20, "200", "Vegetariano"),
+            ProductoFactory.crearProducto("Comida", "leche", 500, 50, "300", "Vegetariano"), // Ejemplo de producto genérico
+            ProductoFactory.crearProducto("Comida", "Carne molida", 15000, 5, "2000", "Carnivoro")
     ));
     public static final ArrayList<Producto> PRODUCTOS_NEGOCIO_2 = new ArrayList<>(Arrays.asList(
-            new Producto("falopa", 5000, 10),
-            new Producto("droga", 3000, 20),
-            new Producto("putas", 500, 50),
-            new Producto("merca", 700, 12)
+            ProductoFactory.crearProducto("comida","medialunas", 5000, 10, "500", "merienda"),
+            ProductoFactory.crearProducto("comida","Huevo revueltos", 3000, 20,"400", "desayuno"),
+            ProductoFactory.crearProducto("comida","croissant", 500, 50, "350", "merienda"),
+            ProductoFactory.crearProducto("comida","pan integral", 700, 12, "350", "Variado")
     ));
     public static final ArrayList<Producto> PRODUCTOS_NEGOCIO_3 = new ArrayList<>(Arrays.asList(
             new Producto("Café", 1300, 10),
@@ -32,9 +32,9 @@ public class Constant {
             new Producto("Alfajores", 700, 12)
     ));
     public static final ArrayList<Negocio> NEGOCIOS = new ArrayList<>(Arrays.asList(
-            new Negocio("negocio1"),
-            new Negocio("negocio2"),
-            new Negocio("negocio3"),
-            new Negocio("negocio4")
+            new NegocioComida("negocio1"),
+            new NegocioComida("negocio2"),
+            new NegocioRopa("negocio3"),
+            new NegocioRopa("negocio4")
     ));
 }

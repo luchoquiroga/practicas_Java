@@ -18,41 +18,64 @@ public class SimuladorDeTiendaStock {
         Constant.NEGOCIOS.get(3).addProductos(Constant.PRODUCTOS_NEGOCIO_4);
 
         Carrito carrito = new Carrito();
-        int opc, cant;
+        int opc, cant, opcM = 0;
+        while (opcM != 4) {
+        System.out.println("[Menú---------------------]");
+        System.out.println("1-Buscar productos");
+        System.out.println("2-Consultar carrito");
+        System.out.println("3-Pagar");
+        System.out.println("4-Salir");
 
-        System.out.println("Bienvenido a nuestras tienda");
-        System.out.println("[Menú de Negocios]----------------------");
-        for (Negocio negocio : Constant.NEGOCIOS) {
-            System.out.println(negocio.getName());
+        opcM = sc.nextInt();
+            switch (opcM) {
+                case 1:
+                    System.out.println("Bienvenido a nuestras tienda");
+                    System.out.println("[Menú de Negocios]----------------------");
+                    for (Negocio negocio : Constant.NEGOCIOS) {
+                        System.out.println(negocio.getName());
+                    }
+                    System.out.println("0-Salir");
+                    opc = sc.nextInt();
+                    if (opc > 0) {
+                        Negocio negocioSeleccionado = Constant.NEGOCIOS.get(opc - 1);
+                        System.out.println(negocioSeleccionado.ShowProducts());
+                        System.out.println("seleccione el producto que desea");
+                        int productSelect = sc.nextInt();
+                        System.out.println("ingrese la cantidad:");
+                        cant = sc.nextInt();
+
+                        // aca filtras en los productosdisponibles, el que eligio el user
+                        Producto productoSeleccionado = negocioSeleccionado.getProductos(negocioSeleccionado).stream()
+                                .filter(p -> p.getNombre().equalsIgnoreCase(negocioSeleccionado.getProductos(negocioSeleccionado).get(productSelect - 1).getNombre()))
+                                .findFirst()
+                                .orElse(null); // si no existe, devuelve null
+
+
+                        if (productoSeleccionado == null) {
+                            System.out.println("producto no encontrado");
+                        } else if (productoSeleccionado.getStock() > cant) {
+                            System.out.println("Producto encontrado: " + productoSeleccionado.mostrarInfo());
+                            ItemCarrito item = new ItemCarrito(productoSeleccionado, cant);
+                            carrito.addItem(item);
+                        } else {
+                            System.out.println("xd");
+                        }
+                    }
+                    break;
+                case 2:
+                    System.out.println("Informacion sobre su carrito\n");
+                    System.out.println(carrito.infoCar());
+                    break;
+                case 3:
+                    System.out.println("inserte codigo QR");
+                    break;
+            }
         }
-        opc = sc.nextInt();
-        Negocio negocioSeleccionado = Constant.NEGOCIOS.get(opc-1);
-        System.out.println(negocioSeleccionado.ShowProducts());
 
 
         // preguntar al usuario que productosNegocio1 y cantidad
-        System.out.println("seleccione el producto que desea");
-        int productSelect = sc.nextInt();
-        System.out.println("ingrese la cantidad:");
-        cant = sc.nextInt();
-
-        // aca filtras en los productosdisponibles, el que eligio el user
-        Producto productoSeleccionado = negocioSeleccionado.getProductos(negocioSeleccionado).stream()
-                .filter(p -> p.getNombre().equalsIgnoreCase(negocioSeleccionado.getProductos(negocioSeleccionado).get(productSelect-1).getNombre()))
-                .findFirst()
-                .orElse(null); // si no existe, devuelve null
 
 
-        if (productoSeleccionado == null) {
-            System.out.println("producto no encontrado");
-        } else if (productoSeleccionado.getStock() > cant) {
-            System.out.println("Producto encontrado: " + productoSeleccionado.mostrarInfo());
-            ItemCarrito item = new ItemCarrito(productoSeleccionado, cant);
-            carrito.addItem(item);
-        } else {
-            System.out.println("xd");
-        }
-        System.out.println(carrito.infoCar());
 
     }
 }
