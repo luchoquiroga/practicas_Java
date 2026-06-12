@@ -5,7 +5,7 @@ import TiendaDeStock.domain.Producto;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Negocio {
+public abstract class Negocio {
     private String name;
     private List<Producto> productos;
 
@@ -13,6 +13,11 @@ public class Negocio {
         this.name = name;
         this.productos = new ArrayList<>();
     }
+
+    public Negocio() {
+    }
+
+    public abstract Producto crearProducto(String nombre, double precio, int stock); // Metodo de fabrica
 
     public String getName() {
         return name;

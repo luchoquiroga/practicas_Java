@@ -12,6 +12,9 @@ public class Producto {
         this.stock = stock;
     }
 
+    public Producto() {
+    }
+
     //setters
 
     public void setPrecio(double precio) {
